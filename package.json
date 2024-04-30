@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsnd --respawn --transpile-only --ignore-watch node_modules src/server.ts"
+    "start": "pm2-runtime start ecosystem.config.js",
+    "dev": "tsnd --respawn --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsup src --out-dir build"
+    
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +16,9 @@
     "@fastify/multipart": "^7.7.3",
     "fastify": "^4.23.2",
     "fastify-multer": "^2.0.3",
-    "ini": "^4.1.1"
+    "ini": "^4.1.1",
+    "pm2": "^5.3.1",
+    "tsup": "^8.0.2"
   },
   "devDependencies": {
     "@types/ini": "^1.3.31",
