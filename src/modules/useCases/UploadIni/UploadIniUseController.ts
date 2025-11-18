@@ -41,7 +41,7 @@ export class UploadIniController {
         ) as IUploadIniRequestDTO;
 
         data.push({
-          code,
+          code: String(code).charAt(0).replace("0", "") + String(code).slice(1),
           artist: newValue.artista,
           artistNormalized: removeAccents(newValue.artista),
           music: newValue.musica,

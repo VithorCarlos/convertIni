@@ -16,7 +16,9 @@ server.get("/musics", async (request, reply) => {
   const filePath = path.join(__dirname, "../public", "output.json");
   const data = fs.readFileSync(filePath, { encoding: "utf-8" });
 
-  reply.header("Content-Type", "application/json").send(JSON.parse(data));
+  const jsonData = JSON.parse(data);
+
+  reply.header("Content-Type", "application/json").send(jsonData);
 });
 
 server.get("/download", (request, reply) => {
